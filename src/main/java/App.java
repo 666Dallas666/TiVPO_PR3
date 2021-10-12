@@ -31,7 +31,7 @@ public class App {
         }
         return Arrays.asList(found, mask);
     }
-    public static void main(String[] args) throws IOException, InterruptedException {
+    public static void start() throws IOException {
             Document doc = Jsoup.connect("https://calculator888.ru/random-generator/sluchaynoye-slovo").get();
             String word = doc.getElementById("bov").text().toLowerCase(Locale.ROOT);
             ArrayList<String> mask = initMask(word.length());
@@ -48,10 +48,11 @@ public class App {
                     System.out.println("Неверный ответ");
                 }
                 if (!mask.contains("*")) {
-                    System.out.println("Победа");
+                    System.out.println("Победа, открытие доступа");
                     break;
                 }
             } while (true);
-            //amogus
+            Storage storage = new Storage();
+            storage.menu();
     }
 }

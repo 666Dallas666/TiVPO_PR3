@@ -1,21 +1,21 @@
-public class Card{
-    int number;
+public class Card {
+    String number;
     String name;
     String date;
-    int cvv;
+    String cvv;
 
-    public Card(int number, String name, String date, int cvv){
+    public Card(String number, String name, String date, String cvv) {
         this.number = number;
         this.name = name;
         this.date = date;
         this.cvv = cvv;
-    };
+    }
 
-    public int getNumber() {
+    public String getNumber() {
         return number;
     }
 
-    public void setNumber(int number) {
+    public void setNumber(String number) {
         this.number = number;
     }
 
@@ -35,21 +35,21 @@ public class Card{
         this.date = date;
     }
 
-    public int getCvv() {
+    public String getCvv() {
         return cvv;
     }
 
-    public void setCvv(int cvv) {
+    public void setCvv(String cvv) {
         this.cvv = cvv;
     }
 
     @Override
     public String toString() {
         return "Card{" +
-                "number=" + number +
+                "number='" + number + '\'' +
                 ", name='" + name + '\'' +
                 ", date='" + date + '\'' +
-                ", cvv=" + cvv +
+                ", cvv='" + cvv + '\'' +
                 '}';
     }
 }
